@@ -170,6 +170,7 @@ public class Board {
 		return pieces;
 	}
 
+
 	public boolean isValidMove(int startRow, int startCol, int endRow, int endCol) {
 		Piece piece = getBoard()[startRow][startCol];
 		return piece != null && piece.isValidMove(startRow, startCol, endRow, endCol, this);

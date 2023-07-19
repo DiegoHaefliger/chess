@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.Scanner;
 
+import static java.lang.System.out;
+
 @Service
 public class ChessGame {
 	private Board board;
@@ -32,21 +34,20 @@ public class ChessGame {
 			board.display();
 
 			if (isPlayerTurn()) {
-				System.out.println("Sua vez de jogar:");
+				out.println("Sua vez de jogar:");
 				player.makeMove(scanner);
 			} else {
-				System.out.println("Vez do oponente (IA):");
-				aiPlayer.makeMove();
+				// É a vez do oponente
+				out.println("Vez do oponente:");
+				aiPlayer.makeMove(scanner);
 			}
 
 			setPlayerTurn(!isPlayerTurn());
 		}
 
 		board.display();
-		System.out.println("Fim de jogo. " + (board.isCheckmate() ? "Checkmate!" : "Empate!"));
+		out.println("Fim de jogo. " + (board.isCheckmate() ? "Checkmate!" : "Empate!"));
 		scanner.close();
 	}
 
 }
-
-

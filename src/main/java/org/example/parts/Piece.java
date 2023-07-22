@@ -20,7 +20,7 @@ public abstract class Piece {
 
 	private int col;
 
-	protected Piece(Cor color, SymbolParts symbol) {
+	public Piece(Cor color, SymbolParts symbol) {
 		this.color = color;
 		this.symbol = symbol;
 	}
